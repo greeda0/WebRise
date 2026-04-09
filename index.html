@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="LaunchSite - منصة احترافية لإنشاء مواقعك الإلكترونية خلال دقائق بدون برمجة. قوالب عصرية، دعم فني، وأسعار تنافسية.">
+<meta name="theme-color" content="#0f172a">
+<title>LaunchSite | أنشئ موقعك الاحترافي خلال دقائق</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: #0b1120;
+    color: #f1f5f9;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+  }
+
+  /* custom scroll */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 10px;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header & Nav */
+  .navbar {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(59,130,246,0.2);
+    padding: 1rem 0;
+  }
+  .nav-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #38bdf8, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  .nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+    font-size: 1rem;
+  }
+  .nav-links a:hover {
+    color: #60a5fa;
+  }
+  .btn-outline-light {
+    background: transparent;
+    border: 1px solid #3b82f6;
+    padding: 8px 18px;
+    border-radius: 40px;
+    color: #3b82f6;
+    font-weight: 700;
+  }
+  .btn-outline-light:hover {
+    background: #3b82f620;
+    color: #90cdf4;
+  }
+
+  /* Hero */
+  .hero {
+    background: radial-gradient(circle at 10% 30%, #0f172a, #020617);
+    padding: 80px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: #1e293b;
+    backdrop-filter: blur(4px);
+    padding: 6px 16px;
+    border-radius: 60px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-bottom: 24px;
+    border: 1px solid #334155;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(to left, #ffffff, #94a3f8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    max-width: 700px;
+    margin: 0 auto 32px;
+  }
+  .btn-primary {
+    background: linear-gradient(95deg, #10b981, #059669);
+    padding: 14px 36px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 25px -5px rgba(16,185,129,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 30px -10px rgba(16,185,129,0.5);
+  }
+  .btn-secondary {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    padding: 14px 32px;
+    border-radius: 50px;
+    color: #e2e8f0;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #334155;
+    transition: 0.2s;
+  }
+  .btn-secondary:hover {
+    background: rgba(59,130,246,0.2);
+    border-color: #3b82f6;
+  }
+  .hero-buttons {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* sections */
+  .section {
+    padding: 80px 0;
+  }
+  .section-dark {
+    background: #0a0f1c;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    text-align: center;
+    color: #94a3b8;
+    max-width: 680px;
+    margin: 0 auto 48px;
+    font-size: 1.1rem;
+  }
+
+  /* Cards grid */
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+  }
+  .feature-card {
+    background: #111827;
+    border-radius: 28px;
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid #1f2937;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(4px);
+  }
+  .feature-card:hover {
+    transform: translateY(-6px);
+    border-color: #3b82f6;
+    box-shadow: 0 20px 30px -12px rgba(0,0,0,0.5);
+  }
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #3b82f6;
+  }
+  .feature-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+  .feature-card p {
+    color: #9ca3af;
+  }
+
+  /* steps */
+  .steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  .step-item {
+    background: #111827;
+    padding: 28px 20px;
+    border-radius: 32px;
+    flex: 1;
+    min-width: 180px;
+    text-align: center;
+    border-bottom: 3px solid #3b82f6;
+  }
+  .step-number {
+    background: #2563eb;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60px;
+    margin: 0 auto 20px;
+    font-weight: 800;
+    font-size: 1.5rem;
+  }
+
+  /* pricing cards premium */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 30px;
+  }
+  .pricing-card {
+    background: #111827;
+    border-radius: 36px;
+    padding: 32px 24px;
+    transition: 0.2s;
+    border: 1px solid #2d3a5e;
+    position: relative;
+  }
+  .pricing-card.popular {
+    border: 2px solid #f59e0b;
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    transform: scale(1.02);
+  }
+  .popular-badge {
+    position: absolute;
+    top: -12px;
+    right: 24px;
+    background: #f59e0b;
+    color: #0f172a;
+    padding: 4px 18px;
+    border-radius: 40px;
+    font-weight: 800;
+    font-size: 0.8rem;
+  }
+  .pricing-card h3 {
+    font-size: 1.9rem;
+    margin-bottom: 10px;
+  }
+  .price {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 20px 0;
+    color: #facc15;
+  }
+  .price small {
+    font-size: 1rem;
+    color: #94a3b8;
+  }
+  .pricing-features {
+    list-style: none;
+    margin: 24px 0;
+  }
+  .pricing-features li {
+    padding: 10px 0;
+    border-bottom: 1px solid #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pricing-features i.fa-check {
+    color: #10b981;
+  }
+  .btn-price {
+    display: block;
+    background: #2563eb;
+    text-align: center;
+    padding: 12px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.2s;
+    margin-top: 20px;
+  }
+  .btn-price:hover {
+    background: #1d4ed8;
+    transform: scale(0.98);
+  }
+
+  /* testimonials */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+  }
+  .testimonial {
+    background: #0f172a;
+    padding: 28px;
+    border-radius: 32px;
+    border: 1px solid #1f2a44;
+  }
+  .testimonial i.fa-quote-right {
+    font-size: 2rem;
+    color: #3b82f6;
+    opacity: 0.5;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+  .testimonial p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-style: normal;
+  }
+  .client {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .client-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(145deg, #334155, #0f172a);
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .star-rating {
+    color: #fbbf24;
+    letter-spacing: 2px;
+  }
+
+  /* CTA final */
+  .cta-block {
+    background: linear-gradient(115deg, #0f172a, #0c0f1c);
+    text-align: center;
+    border-radius: 48px;
+    padding: 60px 30px;
+    border: 1px solid #2d3a5e;
+  }
+
+  /* footer */
+  .footer {
+    background: #030617;
+    padding: 48px 0 30px;
+    border-top: 1px solid #1e293b;
+  }
+  .footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .footer-col h4 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+  .footer-col a {
+    display: block;
+    color: #94a3b8;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: 0.2s;
+  }
+  .footer-col a:hover {
+    color: #60a5fa;
+  }
+  .social-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 1.4rem;
+  }
+  .copyright {
+    text-align: center;
+    border-top: 1px solid #1e293b;
+    padding-top: 30px;
+    color: #64748b;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .section-title { font-size: 1.8rem; }
+    .nav-flex { flex-direction: column; }
+    .nav-links { flex-wrap: wrap; justify-content: center; }
+    .container { padding: 0 20px; }
+    .section { padding: 60px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-flex">
+    <div class="logo"><i class="fas fa-rocket"></i> LaunchSite</div>
+    <div class="nav-links">
+      <a href="#features">المميزات</a>
+      <a href="#how-it-works">كيف يعمل</a>
+      <a href="#pricing">الباقات</a>
+      <a href="#testimonials">آراء</a>
+      <a href="#contact" class="btn-outline-light">تواصل معنا</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge"><i class="fas fa-bolt"></i> ثورة المواقع السريعة</div>
+    <h1>أنشئ موقعك الاحترافي<br>خلال دقائق بدون برمجة</h1>
+    <p>منصة LaunchSite تمنحك موقعًا جاهزًا، متجاوبًا، ومحسنًا لمحركات البحث. اختر قالبك وانطلق لتحقيق مبيعاتك.</p>
+    <div class="hero-buttons">
+      <a href="#pricing" class="btn-primary"><i class="fas fa-store"></i> ابدأ مشروعك الآن</a>
+      <a href="#features" class="btn-secondary"><i class="fas fa-play-circle"></i> شاهد كيف يعمل</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features section -->
+<div class="section" id="features">
+  <div class="container">
+    <div class="section-title">🔥 ماذا ستحصل مع LaunchSite؟</div>
+    <div class="section-sub">حلول متكاملة لرواد الأعمال والشركات الناشئة</div>
+    <div class="grid-3">
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-bolt"></i></div><h3>سرعة فائقة</h3><p>موقعك يعمل بتقنيات عصرية تحميل فوري وتجربة مستخدم سلسة.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-mobile-alt"></i></div><h3>متجاوب بالكامل</h3><p>يبدو رائعاً على الجوال، التابلت، والحاسوب دون أي مجهود إضافي.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><h3>زيادة المبيعات</h3><p>تصميم يجذب الزبائن ويدعم طرق الدفع، لتحويل الزوار إلى عملاء.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-search"></i></div><h3>SEO جاهز</h3><p>هيكل محسّن لمحركات البحث لتظهر في الصفحات الأولى بسرعة.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-headset"></i></div><h3>دعم فني 24/7</h3><p>فريق خبير يساعدك في أي استفسار أو تعديل حتى بعد التسليم.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-cloud-upload-alt"></i></div><h3>استضافة مجانية</h3><p>أول 3 أشهر استضافة مجانية على خوادم سريعة وآمنة.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- How it works -->
+<div class="section section-dark" id="how-it-works">
+  <div class="container">
+    <div class="section-title">🧠 كيف تبدأ خطوة بخطوة؟</div>
+    <div class="section-sub">عملية بسيطة واحترافية توفر عليك الوقت والجهد</div>
+    <div class="steps">
+      <div class="step-item"><div class="step-number">1</div><h3>اختر القالب</h3><p>أكثر من 50 قالبًا عصريًا حسب مجالك</p></div>
+      <div class="step-item"><div class="step-number">2</div><h3>خصص بياناتك</h3><p>أضف شعارك، نصوصك، وصور منتجاتك بسهولة</p></div>
+      <div class="step-item"><div class="step-number">3</div><h3>انشر فورًا</h3><p>اضغط زر النشر، واحصل على رابط موقعك خلال دقائق</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- Pricing section upgraded -->
+<div class="section" id="pricing">
+  <div class="container">
+    <div class="section-title">💰 خطط تناسب كل الأعمال</div>
+    <div class="section-sub">اختر الباقة المثالية وابدأ رحلتك الرقمية اليوم</div>
+    <div class="pricing-grid">
+      <!-- starter -->
+      <div class="pricing-card">
+        <h3>ستارتر</h3>
+        <div class="price">$25 <small>/ موقع</small></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> صفحة رئيسية واحدة</li>
+          <li><i class="fas fa-check-circle"></i> نموذج اتصال احترافي</li>
+          <li><i class="fas fa-check-circle"></i> دعم أساسي لمدة 30 يوم</li>
+          <li><i class="fas fa-check-circle"></i> متوافق مع الجوال</li>
+        </ul>
+        <a href="https://wa.me/249999026626?text=أريد%20باقة%20Starter" class="btn-price"><i class="fab fa-whatsapp"></i> اطلب عبر واتساب</a>
+      </div>
+      <!-- Pro (popular) -->
+      <div class="pricing-card popular">
+        <div class="popular-badge"><i class="fas fa-star"></i> الأكثر طلباً</div>
+        <h3>برو</h3>
+        <div class="price">$80 <small>/ موقع كامل</small></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> حتى 5 صفحات (من نحن، خدمات، مدونة)</li>
+          <li><i class="fas fa-check-circle"></i> نظام إدارة محتوى بسيط</li>
+          <li><i class="fas fa-check-circle"></i> دعم أولوية 60 يوم</li>
+          <li><i class="fas fa-check-circle"></i> شهادة SSL مجانية + SEO متقدم</li>
+          <li><i class="fas fa-check-circle"></i> نموذج حجز أو طلب سريع</li>
+        </ul>
+        <a href="https://wa.me/249999026626?text=أريد%20باقة%20Pro" class="btn-price"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+      </div>
+      <!-- Business -->
+      <div class="pricing-card">
+        <h3>بيزنس</h3>
+        <div class="price">$150 <small>/ شامل</small></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> موقع غير محدود الصفحات</li>
+          <li><i class="fas fa-check-circle"></i> متجر إلكتروني متكامل (حتى 50 منتج)</li>
+          <li><i class="fas fa-check-circle"></i> تسويق + استشارة لمدة شهر</li>
+          <li><i class="fas fa-check-circle"></i> دعم فني لمدة 6 أشهر</li>
+          <li><i class="fas fa-check-circle"></i> تحليلات متقدمة + أدوات تحسين السرعة</li>
+        </ul>
+        <a href="https://wa.me/249999026626?text=أريد%20باقة%20Business" class="btn-price"><i class="fab fa-whatsapp"></i> تواصل للحصول على العرض</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials premium -->
+<div class="section section-dark" id="testimonials">
+  <div class="container">
+    <div class="section-title">💬 آراء عملاء نجحوا معنا</div>
+    <div class="section-sub">آلاف من رواد الأعمال يثقون في LaunchSite</div>
+    <div class="testimonial-grid">
+      <div class="testimonial"><i class="fas fa-quote-right"></i><p>"أفضل استثمار لمشروعي! حصلت على موقع احترافي خلال 24 ساعة فقط، والمبيعات زادات 70% فور النشر."</p><div class="client"><div class="client-avatar">أ</div><div><strong>أحمد يوسف</strong><div class="star-rating">★★★★★</div></div></div></div>
+      <div class="testimonial"><i class="fas fa-quote-right"></i><p>"خدمة سريعة جداً ودعم متجاوب. موقعي يعمل بشكل مثالي حتى على الهواتف القديمة. أنصح بالتعامل معهم بقوة."</p><div class="client"><div class="client-avatar">ن</div><div><strong>نورا عبدالله</strong><div class="star-rating">★★★★★</div></div></div></div>
+      <div class="testimonial"><i class="fas fa-quote-right"></i><p>"باقة Pro كانت خياراً مثالياً لي، أضافوا لي متجر بسيط واحترافي. LaunchSite غير قواعد اللعبة."</p><div class="client"><div class="client-avatar">م</div><div><strong>محمد صلاح</strong><div class="star-rating">★★★★★</div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Final CTA -->
+<div class="section" id="contact">
+  <div class="container">
+    <div class="cta-block">
+      <h2 style="font-size: 2rem; margin-bottom: 16px;">🔥 لا تضيع الفرصة – ابدأ اليوم!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 28px;">احصل على موقعك خلال 24 ساعة مع ضمان الجودة والدعم الفوري.</p>
+      <a href="https://wa.me/249999026626?text=أريد%20بدء%20موقعي%20الاحترافي" class="btn-primary" style="background: linear-gradient(95deg,#2563eb,#1e40af);"><i class="fab fa-whatsapp"></i> اطلب موقعك الآن عبر واتساب</a>
+      <p style="margin-top: 24px; font-size: 0.9rem;">أو تواصل عبر البريد الإلكتروني: ggreeda4@gmail.com</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer modern -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="logo" style="font-size: 1.8rem;">LaunchSite</div>
+        <p style="margin-top: 12px;">نبني نجاحك الرقمي باحترافية وسرعة</p>
+        <div class="social-icons">
+          <a href="https://web.facebook.com/greeda8"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/ahmed-sells"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>الخدمات</h4>
+        <a href="#">تصميم مواقع</a>
+        <a href="#">متاجر إلكترونية</a>
+        <a href="#">استضافة وتسويق</a>
+        <a href="#">دعم فني</a>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <a href="#features">المميزات</a>
+        <a href="#pricing">الباقات</a>
+        <a href="#testimonials">آراء العملاء</a>
+        <a href="#contact">اتصل بنا</a>
+      </div>
+      <div class="footer-col">
+        <h4>تواصل معنا</h4>
+        <a href="https://wa.me/249999026626"><i class="fab fa-whatsapp"></i> 00249999026626</a>
+        <a href="mailto:support@launchsite.com"><i class="far fa-envelope"></i> ggreeda4@gmail.com</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2026 LaunchSite - جميع الحقوق محفوظة. تصميم بكل احترافية لنجاح أعمالكم.</p>
+	  <h3> مع تحيات المدير الفنى أحمد محمد ابكر</h3>
+    </div>
+  </div>
+</footer>
+
+<!-- tiny extra fix for smooth scroll and wa links -->
+<script>
+  (function() {
+    // ensure all internal anchor links smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if(targetId === "#" || targetId === "") return;
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+    // update wa links dynamically with custom message (optional)
+    const waButtons = document.querySelectorAll('a[href*="wa.me/249XXXXXXXXX"]');
+    waButtons.forEach(btn => {
+      if(!btn.href.includes('text=')) {
+        btn.href = btn.href + '?text=مرحباً،%20أريد%20إنشاء%20موقعي%20الاحترافي%20عبر%20LaunchSite';
+      }
+    });
+  })();
+</script>
+</body>
+</html>
