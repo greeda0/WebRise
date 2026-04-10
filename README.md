@@ -53,8 +53,7 @@ LaunchSite هي منصة ذكية تتيح لأي شخص:
 
 ## 📸 Demo
 
-🔗 رابط المنصة:  
-[ضع الرابط هنا]
+🔗 رابط المنصة:(https://greeda0.github.io/WebRise 
 
 ---
 
