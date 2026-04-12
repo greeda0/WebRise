@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>خدماتي الرقمية | تصميم مواقع احترافي</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Tajawal', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+      background: linear-gradient(145deg, #0b1120 0%, #0f172a 100%);
+      color: #eef2ff;
+      line-height: 1.5;
+    }
+
+    /* smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* header hero section */
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: radial-gradient(circle at 10% 30%, rgba(14, 165, 233, 0.2), rgba(99, 102, 241, 0.1));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, #f0f9ff, #a5f3fc);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #cbd5e6;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .btn-primary {
+      background: linear-gradient(95deg, #10b981, #059669);
+      padding: 0.9rem 2.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+      box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.3);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(95deg, #0ea5e9, #3b82f6);
+      box-shadow: 0 20px 25px -12px rgba(14, 165, 233, 0.4);
+    }
+
+    /* section style */
+    .services-section {
+      padding: 3rem 1.5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #22c55e;
+      margin: 12px auto 0;
+      border-radius: 4px;
+    }
+
+    /* cards grid */
+    .cards-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: rgba(30, 41, 59, 0.75);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(71, 85, 105, 0.5);
+      border-radius: 32px;
+      padding: 1.8rem 1.5rem;
+      width: 100%;
+      max-width: 350px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.3);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #22c55e70;
+      background: #1e293b;
+      box-shadow: 0 25px 35px -14px #0f172a;
+    }
+
+    .service-number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      background: linear-gradient(120deg, #22c55e, #0ea5e9);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .service-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: white;
+    }
+
+    .service-summary {
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      border-right: 2px solid #22c55e;
+      padding-right: 12px;
+      text-align: right;
+    }
+
+    .price-badge {
+      background: #0f172a;
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #facc15;
+      margin: 12px 0;
+      border: 1px solid #facc1540;
+    }
+
+    .wa-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: #0f172a;
+      padding: 10px 20px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 12px;
+      transition: 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .wa-link:hover {
+      background: #20b859;
+      transform: scale(1.02);
+      color: white;
+    }
+
+    /* expanded details section (hidden initially) */
+    .expanded-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+      background: #0f172a;
+      border-radius: 28px;
+      margin-top: 12px;
+      text-align: right;
+    }
+
+    .expanded-detail.show {
+      max-height: 550px;    /* enough space for full content */
+      margin-top: 20px;
+    }
+
+    .detail-inner {
+      padding: 1.2rem 1.2rem;
+      background: #111827;
+      border-radius: 24px;
+      border: 1px solid #2d3a5e;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .detail-inner h4 {
+      color: #4ade80;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .detail-inner ul {
+      padding-right: 1.5rem;
+      margin: 12px 0;
+    }
+
+    .detail-inner li {
+      margin: 6px 0;
+    }
+
+    .toggle-btn {
+      background: transparent;
+      border: 1px solid #3b82f6;
+      color: #90cdf4;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      margin-top: 16px;
+      cursor: pointer;
+      transition: 0.2s;
+      font-weight: 500;
+    }
+
+    .toggle-btn:hover {
+      background: #3b82f620;
+      border-color: #22c55e;
+      color: white;
+    }
+
+    /* why us section */
+    .why-us {
+      background: #02061770;
+      margin: 3rem 1.5rem;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 48px;
+      backdrop-filter: blur(5px);
+    }
+
+    .why-us h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .feature-item {
+      background: #1e293b;
+      padding: 1rem 2rem;
+      border-radius: 60px;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: #6c7a91;
+      border-top: 1px solid #1e2a3a;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .service-title {
+        font-size: 1.5rem;
+      }
+      .cards-grid {
+        gap: 1.2rem;
+      }
+      .service-card {
+        padding: 1.4rem;
+      }
+    }
+
+    /* extra hover effect */
+    button, a {
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🔥 حلول رقمية تنمو بعملك 🔥</h1>
+  <p>تصاميم احترافية + أداء فائق + دعم مستمر — اختر الباقة المناسبة لنجاحك</p>
+  <a class="btn-primary" href="https://wa.me/249999026626?text=مرحباً%20أريد%20البدء%20مباشرة" target="_blank">
+    📲 تواصل معنا الآن
+  </a>
+</div>
+
+<div class="services-section">
+  <h2 class="section-title">✨ خدماتنا المخصصة ✨</h2>
+  <div class="cards-grid">
+    
+    <!-- service 1: موقع بسيط -->
+    <div class="service-card" id="card1">
+      <div class="service-number">01</div>
+      <div class="service-title">📍 موقع بسيط</div>
+      <div class="service-summary">🔥 باكج الموقع البسيط: تصميم احترافي، متوافق مع الجوال، تسليم سريع خلال 24 ساعة</div>
+      <div class="price-badge">💰 السعر: 25$</div>
+      <!-- رابط واتس اب خاص بالخدمة 1 -->
+      <a class="wa-link" href="https://wa.me/249999026626?text=أريد%20باقة%20الموقع%20البسيط%20(25$)%20أبدأ%20الآن" target="_blank">
+        💬 هل تريد البدء الآن؟ | اضغط هنا
+      </a>
+      <div>
+        <button class="toggle-btn" data-target="detail1">📖 قراءة التفاصيل الكاملة</button>
+      </div>
+      <!-- القسم الخاص بالتفاصيل القابلة للطي -->
+      <div id="detail1" class="expanded-detail">
+        <div class="detail-inner">
+          <h4>📌 تفاصيل الباقة البسيطة (Service 1)</h4>
+          <p><strong>✅ تصميم احترافي:</strong> واجهة عصرية جذابة تناسب هويتك التجارية.</p>
+          <p><strong>📱 متوافق مع الهاتف بالكامل:</strong> responsive بنسبة 100% على جميع الأجهزة.</p>
+          <p><strong>⚡ تسليم خلال 24 ساعة:</strong> نبدأ فوراً بعد تأكيد الطلب ونسلم الموقع جاهز للنشر.</p>
+          <p><strong>🎯 يشمل:</strong> صفحة رئيسية + قسم خدمات + نموذج اتصال + روابط تواصل اجتماعي.</p>
+          <p><strong>🛠 دعم فني لمدة 7 أيام</strong> بعد التسليم مجاناً.</p>
+          <p><strong>💰 السعر النهائي 25$ فقط</strong> (لا توجد رسوم خفية).</p>
+          <p style="margin-top: 12px;">✨ يمكنك طلب الخدمة مباشرة عبر الواتس اب بالضغط على الرابط أعلاه ✨</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- service 2: موقع احترافي -->
+    <div class="service-card" id="card2">
+      <div class="service-number">02</div>
+      <div class="service-title">🚀 موقع احترافي</div>
+      <div class="service-summary">🚀 الباكج الاحترافي: تصميم متكامل، صفحات متعددة، تحسين المظهر والسرعة.</div>
+      <div class="price-badge">💰 السعر: 80$</div>
+      <a class="wa-link" href="https://wa.me/249999026626?text=أريد%20الباقة%20الاحترافية%20(80$)%20أرسل%20لي%20نماذج" target="_blank">
+        📩 هل أرسل لك نماذج؟ | تواصل الآن
+      </a>
+      <div>
+        <button class="toggle-btn" data-target="detail2">📖 قراءة التفاصيل الكاملة</button>
+      </div>
+      <div id="detail2" class="expanded-detail">
+        <div class="detail-inner">
+          <h4>🌟 تفاصيل الباقة الاحترافية (Service 2)</h4>
+          <ul>
+            <li>✔ <strong>تصميم متكامل</strong> حسب رؤيتك + هوية بصرية فريدة.</li>
+            <li>✔ <strong>صفحات متعددة</strong> (الرئيسية، من نحن، الخدمات، المدونة، اتصل بنا) حسب الحاجة.</li>
+            <li>✔ <strong>تحسين المظهر والسرعة</strong> – سرعة تحميل فائقة وأداء عالي على جوجل.</li>
+            <li>✔ <strong>تحسين أساسي لمحركات البحث (SEO)</strong> لظهور أفضل.</li>
+            <li>✔ <strong>نظام إدارة محتوى بسيط</strong> يتيح لك تحديث النصوص والصور بسهولة (اختياري).</li>
+            <li>✔ <strong>دعم فني لمدة شهر</strong> وتعديلات مجانية لمدة أسبوعين.</li>
+            <li>💎 السعر التنافسي <strong>80$</strong> فقط – جودة احترافية بأقل التكاليف.</li>
+          </ul>
+          <p>📲 اطلب الآن وسنرسل لك نماذج أعمال سابقة حسب مجالك!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- service 3: موقع تجاري كامل + تسويق -->
+    <div class="service-card" id="card3">
+      <div class="service-number">03</div>
+      <div class="service-title">🏢 موقع تجاري كامل</div>
+      <div class="service-summary">Business • موقع متكامل + تسويق رقمي • حل شامل للشركات والمتاجر.</div>
+      <div class="price-badge">💰 السعر: 150$+</div>
+      <a class="wa-link" href="https://wa.me/249999026626?text=أحتاج%20موقع%20تجاري%20كامل%20+%20تسويق%20(150$+)%20أريد%20استشارة" target="_blank">
+        📈 استفسر عن الباقة التجارية
+      </a>
+      <div>
+        <button class="toggle-btn" data-target="detail3">📖 قراءة التفاصيل الكاملة</button>
+      </div>
+      <div id="detail3" class="expanded-detail">
+        <div class="detail-inner">
+          <h4>💼 الباقة التجارية الكاملة – متجر / شركة متكاملة</h4>
+          <p><strong>✨ ماذا تشمل الخدمة؟</strong></p>
+          <ul>
+            <li>✅ <strong>موقع متكامل للتجارة الإلكترونية</strong> أو موقع شركة احترافي (نظام متطور).</li>
+            <li>✅ <strong>تصميم متجر متوافق مع المنتجات</strong> (سلة مشتريات، بوابات دفع، إدارة مخزون).</li>
+            <li>✅ <strong>حملات تسويق رقمي</strong> – إعلانات جوجل وفيسبوك، وتحسين ظهور (SEO متقدم).</li>
+            <li>✅ <strong>إستراتيجية تسويق المحتوى</strong> لجذب العملاء وزيادة المبيعات.</li>
+            <li>✅ <strong>تدريب فريقك على إدارة الموقع والتسويق</strong>.</li>
+            <li>✅ <strong>استضافة سريعة + نطاق مجاني للسنة الأولى</strong> (حسب المتطلبات).</li>
+            <li>✅ <strong>دعم فني وتقني لمدة 3 أشهر</strong> وتحديثات أمنية.</li>
+          </ul>
+          <p><strong>💰 الأسعار تبدأ من 150$</strong> وتختلف حسب حجم المتجر والخدمات التسويقية المطلوبة. نقدم عرضاً مخصصاً حسب احتياجك.</p>
+          <p>🚀 اطلب الخدمة الآن واحصل على موقع احترافي + خطة تسويق لتنطلق بقوة.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="why-us">
+  <h3>⭐ لماذا نحن؟</h3>
+  <div class="features">
+    <span class="feature-item">⚡ سرعة في التنفيذ</span>
+    <span class="feature-item">🎨 تصاميم عصرية</span>
+    <span class="feature-item">📞 دعم فني 24/7</span>
+    <span class="feature-item">🏆 نتائج مضمونة</span>
+  </div>
+  <p style="margin-top: 2rem;">نضمن لك الجودة والاحترافية في جميع خدماتنا، تواصل معنا اليوم واختر خطتك المناسبة.</p>
+</div>
+
+<footer>
+  <p>© 2026 جميع الحقوق محفوظة | خدمات تصميم الويب والتسويق الرقمي</p>
+  <p style="margin-top: 8px;">📲 للاستفسار السريع: اضغط على أيقونة الواتس اب داخل الباقة التي تريدها</p>
+  <h3> مع تحيات Amb4tch  أحمد محمد أبكر</h3>
+</footer>
+
+<script>
+  // Adding interactive expand/collapse functionality for each service card
+  // to let user read full description when clicking "قراءة التفاصيل الكاملة"
+  
+  // get all toggle buttons
+  const toggleButtons = document.querySelectorAll('.toggle-btn');
+  
+  function closeOtherDetails(currentDetailId) {
+    // close all expanded details except the current one (optional UX)
+    const allDetails = document.querySelectorAll('.expanded-detail');
+    allDetails.forEach(detail => {
+      if (detail.id !== currentDetailId && detail.classList.contains('show')) {
+        detail.classList.remove('show');
+      }
+    });
+  }
+  
+  toggleButtons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const targetId = this.getAttribute('data-target');
+      const targetDiv = document.getElementById(targetId);
+      if (targetDiv) {
+        // if clicked detail is already shown, collapse it
+        if (targetDiv.classList.contains('show')) {
+          targetDiv.classList.remove('show');
+        } else {
+          // optional: close other open details to keep interface clean
+          closeOtherDetails(targetId);
+          targetDiv.classList.add('show');
+        }
+      }
+    });
+  });
+  
+  // Also allow clicking on card title or any area? but we keep only button for clarity.
+  // to enhance UX: clicking on price badge or summary does not interfere.
+  // Also make sure WhatsApp links work natively.
+  // Prefill messages are already included.
+  
+  // Additional behavior: when the user clicks on service card's wa-link, it's direct.
+  // All external links have target="_blank" and proper message.
+  
+  // For better mobile: ensure the expanded area doesn't overflow.
+  // Already set max-height:550px, but if content grows we can adapt.
+  // Adjust if needed dynamically.
+  console.log("Services ready with expandable details and dedicated WhatsApp links.");
+  
+  // Small extra: make sure that if user clicks on a card but not on button/links, nothing breaks.
+  // Also we can add a little animation to highlight that each service has a detail button.
+  
+  // Because the requirement says: "اجعل رابط لكل جزء عند الضغط علية يمكن قراءت كل جزء كامل"
+  // So we have separate toggle button for each card that expands full description.
+  // Plus original WhatsApp links for each service separately (service1, service2, service3)
+  // We added exactly three services with each specific WhatsApp message.
+  
+  // Update: service1 message: "أريد باقة الموقع البسيط (25$) أبدأ الآن"
+  // service2 message: "أريد الباقة الاحترافية (80$) أرسل لي نماذج"
+  // service3 message: "أحتاج موقع تجاري كامل + تسويق (150$+) أريد استشارة"
+  // And also there is main CTA button at hero for general contact.
+  
+  // Fix any possible RTL issues? fine as it's arabic but left-to-right layout, but works.
+  // Also added right border to summary to feel arabic-friendly.
+  
+  // make sure that expanded content doesn't conflict with external clicks
+  document.querySelectorAll('.expanded-detail').forEach(detail => {
+    detail.addEventListener('click', (e) => e.stopPropagation());
+  });
+  
+  // Optional: Add accessibility to close details when clicking outside? but not needed for simplicity.
+</script>
+
+</body>
+</html>
